@@ -29,10 +29,26 @@
 <div class="container-fluid">
     <div class="row">
 <div class="background">
-	<form method="post" action="/submit">
-        <h3>Choose a location</h3>
-		<input type="text" name="location_choice" placeholder="Enter a location"/>
+	<form method="post" action="/results">
+		<!-- <input type="text" name="price" placeholder="Enter a price"/> -->
+        <p>Location: {{ location_query }}, {{ city_id }}</p>
+		<h3>Choose a category</h3>
+        <input list="categories" name="categories">
+        <datalist id="categories">
+            {% for item in list_of_categories %}
+            <option value={{ item }}>
+            {% endfor %}
+        </datalist>
+
+		<h3>Choose a cuisine</h3>
+        <input list="cuisines" name="cuisines">
+        <datalist id="cuisines">
+            {% for item in list_of_cuisines %}
+            <option value={{ item }}>
+            {% endfor %}
+        </datalist>
         <input type="submit">
+
     </form>
 </div>
 </div>

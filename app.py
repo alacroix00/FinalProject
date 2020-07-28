@@ -12,6 +12,7 @@ from model import makeCuisineIDList
 from model import getLocation
 from model import getLocationID
 from model import getLocationType
+from model import search
 
 # -- Initialization section --
 app = Flask(__name__)
@@ -82,4 +83,8 @@ def results():
     location = requests.get(endpoint3, headers=API_AUTH).json()
     location_id = getLocationID(location)
     location_type = getLocationType(location)
-    return render_template("results.html", time=datetime.now(), category_id = category_id, cuisine_id = cuisine_id, location_id = location_id, location_type= location_type)
+    endpoint4 = f"https://developers.zomato.com/api/v2.1/search?entity_id={location_id}&entity_type={location_type}&cuisines={cuisine_id}&category={category_id}"
+    search_results = requests.get(endpoint4, headers=API_AUTH).json()
+    restaurant_name = search(search_results)
+    print(restaurant_name)
+    return render_template("results.html", time=datetime.now(), category_id = category_id, cuisine_id = cuisine_id, location_id = location_id, location_type= location_type, restaurant_name=restaurant_name)

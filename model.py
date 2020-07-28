@@ -26,3 +26,18 @@ def getLocationID(location):
 def getLocationType(location):
     location_type = location["location_suggestions"][0]["entity_type"]
     return location_type
+
+def search(search_results):
+    restaurant_name = []
+    restaurant_address = []
+    restaurant_url = []
+    restaurant_rating = []
+    restaurant_cuisine = []
+    restaurant_highlights =[]
+    restaurant_average_cost = []
+    restaurant_currency = []
+    restaurant_timing = []
+    counter = 0
+    for num in range(0, search_results["results_shown"]):
+        restaurant_name.append(search_results["restaurants"][num]["restaurant"]["name"])
+    return restaurant_name

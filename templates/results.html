@@ -10,9 +10,8 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/static/css/style.css') }}?q={{ time }}" />
 </head>
 <body>
-    <p> {{category_id}} </p>
-    <p> {{cuisine_id}} </p>
-    <p> {{location_id}} </p>
-    <p> {{location_type}} </p>
+    {% for item in restaurant_name %}
+        <h2>{{item}}</h2>
+    {% endfor %}
 </body>
 </html>

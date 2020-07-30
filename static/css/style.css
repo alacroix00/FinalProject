@@ -1,3 +1,95 @@
 .container-fluid {
     background-color: #d5f4e6;
 }
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#results {
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px;
+    background-color: #fefbd8;
+
+}
+
+#firstheader {
+    background-color: #618685;
+    color: #d5f4e6;
+}
+
+h1 {
+    font-family: 'Lora', serif;
+
+}
+p {
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+body {
+    text-align: center;
+}
+.background-image {
+    background-image: url("https://static.independent.co.uk/s3fs-public/thumbnails/image/2020/04/02/13/istock-1155240408.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+h2 { 
+    font-family: 'Lora', serif;
+    color: #618685;
+}
+
+h3 {
+    font-family: 'Lora', serif;
+}
+
+a:hover {
+    color: #618685;
+}
+
+input[type=submit] {
+    background-color: #618685;
+    color: #d5f4e6;
+    font-family: 'Nunito Sans', sans-serif;
+    border-color: #d5f4e6;
+}
+
+#header {
+    background-color: #D5F4E6;
+}
+.card {
+    margin: 0 auto;
+}
+body {
+    background-color: #D5F4E6;
+    text-align: center;
+}
+.navbar-nav {
+  white-space: nowrap;
+  padding: 10px;
+}
+.nav-item {
+    padding: 10px;
+}
+.navbar-nav {
+  color: #fff;
+  transition: 0.3s;
+  font-size: 18px;
+  font-family: 'Nunito Sans', sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.aixa {
+    width: 250px;
+}
+.alexis {
+    width: 250px;
+}
+.theteam {
+    text-align: center;
+}

@@ -11,39 +11,47 @@
     <link id="favicon" rel="icon" href="https://bit.ly/39Fb5jG">
 </head>
 <body class="background-image">
-    <h1>YOUR MATCHES</h1>
-    <p>{{ global_loc_title }}</p>
-    <h3>Choose a category</h3>
-    <form method="POST" action = "/finalresults">
-        <input list="sort_choice" name="sort_choice">
-        <datalist id="sort_choice">
-            <option value="cost">
-            <option value="rating">
-        </datalist>
-        <input list="order_choice" name="order_choice">
-        <datalist id="order_choice">
-            <option value="asc">
-            <option value="desc">
-        </datalist>
-        <input type="submit">
+    <div class="card" id="firstheader" style="width: 40rem;">
+		<div class="card-body">
+			<h1 class="card-title">Your Matches</h1>
+			<p>{{ global_loc_title }}</p>
+			<h3>Sort and order your options!</h3>
+			<form method="POST" action="/finalresults">
+				<input list="sort_choice" name="sort_choice">
+				<datalist id="sort_choice">
+					<option value="cost">
+					<option value="rating">
+				</datalist>
+				<input list="order_choice" name="order_choice">
+				<datalist id="order_choice">
+					<option value="asc">
+					<option value="desc">
+				</datalist>
+				<input type="submit">
     </form>
+		</div>
+	</div>
+    
     {% for num in range(0, restaurant_name|length) %}
-    <a href="{{restaurant_url[num]}}" target="_blank"><h2>{{restaurant_name[num]}}</h2></a>
-    <p>{{restaurant_address[num]}}</p>
-    <p>Cuisine(s) offered: {{restaurant_cuisine[num]}}</p>
-    <p>Rating: {{restaurant_rating[num]}} stars</p>
-    <p>Hours: {{restaurant_timing[num]}}</p>
-    <p>Average Cost for Two People: {{restaurant_currency[num]}}{{restaurant_average_cost[num]}}</p>
-    <p><em>Highlights</em></p>
-        <div class="row">
-            <div class="col-3">
-        {% for num1 in range(0, restaurant_highlights[num]|length) %}
-        <ul>
-            <li>{{ restaurant_highlights[num][num1]}}</li>
-        </ul>
-        {% endfor %}
-            </div>
-        </div>
-    {% endfor %}
+	<div class="card text-center" id="results" style="width: 40rem;">
+		<div class="card-body">
+			<a href="{{restaurant_url[num]}}" target="_blank">
+				<h2 class="card-title">{{restaurant_name[num]}}</h2>
+			</a>
+			<p class="card-text">{{restaurant_address[num]}}</p>
+			<p class="card-text"><u>Cuisine(s) Offered</u>: {{restaurant_cuisine[num]}}</p>
+			<p class="card-text"><u>Rating</u>: {{restaurant_rating[num]}} stars</p>
+			<p class="card-text"><u>Hours</u>: {{restaurant_timing[num]}}</p>
+			<p class="card-text"><u>Average Cost for Two People</u>:
+				{{restaurant_currency[num]}}{{restaurant_average_cost[num]}}</p>
+			<p class="card-text"><u>Highlights</u>:</p>
+			<ul class="card-text">
+				{% for num1 in range(0, restaurant_highlights[num]|length) %}
+				<li>{{ restaurant_highlights[num][num1]}}</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	{% endfor %}
 </body>
 </html>

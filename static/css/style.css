@@ -52,22 +52,32 @@ a:hover {
     color: #618685;
 }
 
-input[type=submit] {
+/* input[type=submit] {
     background-color: #618685;
     color: #d5f4e6;
     font-family: 'Nunito Sans', sans-serif;
     border-color: #d5f4e6;
-}
+} */
+
+/* index.html code */
 
 #header {
     background-color: #D5F4E6;
 }
+.aboutus {
+    background-color: #D5F4E6;
+    margin-top: 60px;
+}
 .card {
     margin: 0 auto;
+    background-color: #F1F1F1;
+    border: none;
 }
-body {
+body, html {
     background-color: #D5F4E6;
     text-align: center;
+    font-family: 'Lora', sans-serif;
+    height: 100%;
 }
 .navbar-nav {
   white-space: nowrap;
@@ -80,7 +90,7 @@ body {
   color: #fff;
   transition: 0.3s;
   font-size: 18px;
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Lora', sans-serif;
   text-transform: uppercase;
   font-weight: 600;
 }
@@ -92,4 +102,56 @@ body {
 }
 .theteam {
     text-align: center;
+}
+* {
+  box-sizing: border-box;
+}
+.bg-img {
+  /* The image used */
+  background-image: url("/static/images/background.jpg");
+  /* Control the height of the image */
+  min-height: 1500px;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+/* Add styles to the form container */
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 20px;
+  max-width: 450px;
+  padding: 30px;
+  background-color: rgba(255,255,255, .75);
+}
+/* Full-width input fields */
+input[type=text]{
+  width: 100%;
+  font-family: 'Lora', sans-serif;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #F1F1F1;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+/* Set a style for the submit button */
+.submit {
+  background-color: #618685;
+  font-family: 'Lora', sans-serif;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+.submit:hover {
+  opacity: 1;
 }

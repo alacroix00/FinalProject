@@ -9,43 +9,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- Import your own stylesheet -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}?q={{ time }}" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
 </head>
-<body>
-	<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-        <img src="/static/images/waldemar-brandt-yzwKXsjYyDk-unsplash.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="/static/images/vishwas-katti-UrQ_BS9bLXQ-unsplash.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="/static/images/siyuan-g_V2rt6iG7A-unsplash.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-</div>
-<div class="container-fluid">
-    <div class="row">
-<div class="background">
-	<form method="POST" action = "/results">
-		<h3>Choose a category</h3>
-        <input list="categories" name="categories">
+<body class="index">
+<div class="image2 background">
+	<form method="POST" action = "/results" class="container">
+		<h1 style="font-family: 'Lora', sans-serif;">Choose a category:</h1>
+        <input list="categories" name="categories" placeholder="Category">
         <datalist id="categories">
             {% for item in list_of_categories %}
             <option value={{ item }}>
             {% endfor %}
         </datalist>
-		<h3>Choose a cuisine</h3>
-        <input list="cuisines" name="cuisines">
+		<h1 style="font-family: 'Lora', sans-serif;">Choose a cuisine:</h1>
+        <input list="cuisines" name="cuisines" placeholder="Cuisine">
         <datalist id="cuisines">
             {% for item in list_of_cuisines %}
             <option value={{ item }}>
             {% endfor %}
         </datalist>
-        <input type="submit">
+        <div class="space"></div>
+        <input type="submit" class="submit">
     </form>
-</div>
-</div>
 </div>
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
